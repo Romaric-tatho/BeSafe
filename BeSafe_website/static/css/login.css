@@ -1,0 +1,72 @@
+/* static/css/login.css */
+.login {
+    max-width: 400px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.login header {
+    font-size: 1.5rem;
+    font-weight: var(--font-semi-bold);
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: var(--font-medium);
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--dark-color-light);
+    border-radius: 0.25rem;
+    font-size: var(--normal-font-size);
+    background-color: var(--white-color);
+}
+
+.btn-primary {
+    background-color: var(--first-color);
+    color: var(--white-color);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: background-color 0.4s;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: hsl(216, 96%, 54%);
+}
+
+.signup {
+    margin-top: 1.5rem;
+    font-size: var(--small-font-size);
+}
+
+.signup a {
+    color: var(--first-color);
+    font-weight: var(--font-medium);
+}
+
+.signup a:hover {
+    color: hsl(216, 96%, 54%);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 320px) {
+    .login {
+        margin: 1rem;
+    }
+}

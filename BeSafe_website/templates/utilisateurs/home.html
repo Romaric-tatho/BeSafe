@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block title %}Accueil - BeSafe{% endblock %}
+
+{% block content %}
+    <!--==================== HERO SECTION ====================-->
+    <section class="hero section">
+        <div class="hero__container container">
+            <div class="hero__content">
+                <h1 class="hero__title">Protégez-vous dans un monde numérique</h1>
+                <p class="hero__description">
+                    BeSafe, créé par des étudiants en cybersécurité, vous sensibilise aux menaces informatiques et vous apprend à sécuriser vos données.
+                </p>
+                <div class="hero__actions">
+                    <a href="{% url 'register' %}" class="btn btn-primary">S'inscrire</a>
+                    <a href="#threats" class="btn btn-secondary">En savoir plus</a>
+                </div>
+            </div>
+            <div class="hero__image">
+                <img src="{% static 'images/hero_cybersecurity.jpg' %}" alt="Cybersécurité">
+            </div>
+        </div>
+    </section>
+
+    <!--==================== THREATS SECTION ====================-->
+    <section class="threats section" id="threats">
+        <div class="threats__container container">
+            <h2 class="section__title">Menaces courantes en cybersécurité</h2>
+            <p class="section__subtitle">
+                Découvrez les dangers qui guettent et apprenez à vous en protéger.
+            </p>
+            <div class="threats__cards">
+                <div class="threat__card">
+                    <img src="{% static 'images/phishing.jpg' %}" alt="Phishing" class="threat__image">
+                    <h3 class="threat__title">Phishing</h3>
+                    <p class="threat__description">
+                        Les attaquants se font passer pour des entités fiables pour voler vos informations.
+                    </p>
+                    <a href="#" class="threat__link">Comment se protéger</a>
+                </div>
+                <div class="threat__card">
+                    <img src="{% static 'images/malware.jpg' %}" alt="Malware" class="threat__image">
+                    <h3 class="threat__title">Malwares</h3>
+                    <p class="threat__description">
+                        Logiciels malveillants qui infectent vos appareils pour espionner ou détruire.
+                    </p>
+                    <a href="#" class="threat__link">Comment se protéger</a>
+                </div>
+                <div class="threat__card">
+                    <img src="{% static 'images/password.jpg' %}" alt="Mots de passe faibles" class="threat__image">
+                    <h3 class="threat__title">Mots de passe faibles</h3>
+                    <p class="threat__description">
+                        Des mots de passe simples sont une porte ouverte pour les pirates.
+                    </p>
+                    <a href="#" class="threat__link">Comment se protéger</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== TIPS SECTION ====================-->
+    <section class="tips section">
+        <div class="tips__container container">
+            <h2 class="section__title">Conseils pour votre sécurité</h2>
+            <p class="section__subtitle">
+                Adoptez ces bonnes pratiques pour naviguer en toute sécurité.
+            </p>
+            <div class="tips__list">
+                <div class="tip__item">
+                    <i class="ri-shield-check-line tip__icon"></i>
+                    <h3 class="tip__title">Mots de passe forts</h3>
+                    <p class="tip__description">
+                        Utilisez des mots de passe longs, avec des lettres, chiffres et symboles.
+                    </p>
+                </div>
+                <div class="tip__item">
+                    <i class="ri-lock-2-line tip__icon"></i>
+                    <h3 class="tip__title">Authentification à deux facteurs</h3>
+                    <p class="tip__description">
+                        Ajoutez une couche de sécurité avec un code envoyé sur votre téléphone.
+                    </p>
+                </div>
+                <div class="tip__item">
+                    <i class="ri-download-cloud-2-line tip__icon"></i>
+                    <h3 class="tip__title">Mises à jour régulières</h3>
+                    <p class="tip__description">
+                        Mettez à jour vos logiciels pour corriger les failles de sécurité.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== ABOUT SECTION ====================-->
+    <section class="about section">
+        <div class="about__container container">
+            <div class="about__image">
+                <img src="{% static 'images/team_cybersecurity.jpg' %}" alt="Équipe BeSafe">
+            </div>
+            <div class="about__content">
+                <h2 class="section__title">À propos de BeSafe</h2>
+                <p class="section__subtitle">
+                    Une initiative d'étudiants en cybersécurité pour un monde numérique plus sûr.
+                </p>
+                <p class="about__description">
+                    Nous sommes une équipe d'étudiants en master de cybersécurité, passionnés et engagés. Avec BeSafe, nous alertons sur les nouvelles menaces informatiques et sensibilisons le public aux bonnes pratiques pour se protéger. Rejoignez-nous pour bâtir un avenir numérique sécurisé !
+                </p>
+                <a href="{% url 'register' %}" class="btn btn-primary">Rejoignez-nous</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

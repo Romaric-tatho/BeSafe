@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block title %}Inscription - BeSafe{% endblock %}
+
+{% block content %}
+    <div class="container registration form">
+        <header>Inscription</header>
+        <form method="POST" enctype="multipart/form-data" class="border p-4 rounded">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+
+            <!-- Username -->
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">Nom d'utilisateur</label>
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.username.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Email</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.email.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">Mot de passe</label>
+                {{ form.password1 }}
+                {% if form.password1.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.password1.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">Confirmer le mot de passe</label>
+                {{ form.password2 }}
+                {% if form.password2.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.password2.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <!-- Profile Picture -->
+            <div class="form-group">
+                <label for="{{ form.profile_picture.id_for_label }}">Photo de profil</label>
+                {{ form.profile_picture }}
+                {% if form.profile_picture.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.profile_picture.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+
+            <!-- User Type (readonly) -->
+            {% comment %} <div class="form-group">
+                <label for="{{ form.user_type.id_for_label }}">Type d'utilisateur</label>
+                {{ form.user_type }}
+                {% if form.user_type.errors %}
+                    <ul class="errorlist">
+                        {% for error in form.user_type.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div> {% endcomment %}
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">S'inscrire</button>
+        </form>
+        <div class="signup">
+            <span>Déjà un compte ? <a href="{% url 'login' %}">Connexion</a></span>
+        </div>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/register.js' %}"></script>
+{% endblock %}
